@@ -29,7 +29,9 @@ $limit = $userLimit["monthlyLimit"];
 if($totalMontlyAmount+$amount<=$limit){
     // $addoutgoing = "INSERT INTO outgoings (title,source,category,type,amount,userId,date) VALUES ('$title','$source','$category','$type',$amount,$userId,'$date')";
 $addoutgoing = "INSERT INTO transactions (title,source,category,amount,userId,date,type) VALUES ('$title','$source','$category',$amount,$userId,'$date','outgoing')";
+$updateWallet = "UPDATE wallets SET amount=amount+$amount WHERE userId=$userId";
 $mysqli->query($addoutgoing);
+$mysqli->query($updateWallet);
 $response = array("response"=>"outgoingAdd");
 echo json_encode($response);
 }else{
