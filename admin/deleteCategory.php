@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 require "../db_connect.php";
 
-$deleteCategory = mysqli_real_escape_string($mysqli,$_GET["deleteCategory"]);
+$categoryId = mysqli_real_escape_string($mysqli,$_GET["categoryId"]);
 
 $getAllCategories = "SELECT json FROM categories";
 $allCategories = $mysqli->query($getAllCategories);
@@ -11,7 +11,7 @@ $allCategoriesArray = json_decode($allCategories["json"],true);
 
 $newCategories = array();
 foreach($allCategoriesArray as $single){
-    if($single!=$deleteCategory){
+    if($single["categoryId"]!=$categoryId){
         array_push($newCategories,$single); 
     } 
 }
