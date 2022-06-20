@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 require "./db_connect.php";
-
+session_start();
 $login = mysqli_real_escape_string($mysqli,$_GET["login"]);
 $password = mysqli_real_escape_string($mysqli,$_GET["password"]);
 
