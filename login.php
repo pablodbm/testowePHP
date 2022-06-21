@@ -8,7 +8,7 @@ $password = mysqli_real_escape_string($mysqli,$_GET["password"]);
 if(strlen($login)!=0 && strlen($password)!=0){
 $password = md5($password);
 
-$checkCorrectLogin = "SELECT login,name,surname,email,active,id FROM users WHERE password='$password' AND login='$login'";
+$checkCorrectLogin = "SELECT login,name,surname,email,active,id,userType FROM users WHERE password='$password' AND login='$login'";
 $loginResult = $mysqli->query($checkCorrectLogin);
 
 $response = array();
