@@ -8,9 +8,10 @@ $source = mysqli_real_escape_string($mysqli,$_GET["source"]);
 $category = mysqli_real_escape_string($mysqli,$_GET["category"]);
 $amount = mysqli_real_escape_string($mysqli,$_GET["amount"]);
 $date = mysqli_real_escape_string($mysqli,$_GET["date"]);
+$userId = mysqli_real_escape_string($mysqli,$_GET["userId"]);
 //z poziomu php dodajemy date wplywu oraz z sesji userid
 // $date = date('Y-m-d H:i:s');
- $userId = $_SESSION["userId"];
+//  $userId = $_SESSION["userId"];
 //$userId = 2;
 
 //sprawdzenia przekroczenia limitu

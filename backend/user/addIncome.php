@@ -11,6 +11,7 @@ $amount = mysqli_real_escape_string($mysqli,$_GET["amount"]);
 //Dwa dodatkowe do naprawy błędu
 $date = mysqli_real_escape_string($mysqli,$_GET["date"]);
 $userId = mysqli_real_escape_string($mysqli,$_GET["userId"]);
+// $userId = $_SESSION["userId"];
 //z poziomu php dodajemy date wplywu oraz z sesji userid
 // TEST -> $date = date('Y-m-d H:i:s');
 // TEST -> $userId = $_SESSION["userId"];
